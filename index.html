@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player de Música</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="player">
+    <h1>🎵 Meu Player</h1>
+
+    <div class="info">
+      <p id="nomeMusica">Música 1</p>
+    </div>
+
+    <audio id="audio" src="musicas/musica1.mp3"></audio>
+
+    <div class="progresso-container">
+
+      <div class="progresso"></div>
+      
+    </div>
+
+    <div class="tempo">
+      <span id="tempoAtual">0:00</span>
+      <span id="duracao">0:00</span>
+    </div>
+
+    <div class="botoes">
+      <button id="voltar">⏮</button>
+      <button id="play">▶</button>
+      <button id="proxima">⏭</button>
+    </div>
+
+    <label for="volume">Volume</label>
+    <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
