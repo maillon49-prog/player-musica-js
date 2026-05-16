@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <!-- Configuração de caracteres -->
   <meta charset="UTF-8">
+
+  <!-- Faz o site se adaptar melhor em celular e computador -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparece na aba do navegador -->
   <title>Player de Música</title>
+
+  <!-- Conecta o arquivo CSS ao HTML -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+  <!-- Container principal do player -->
   <main class="player">
+
+    <!-- Título do player -->
     <h1>🎵 Meu Player</h1>
 
+    <img id="capa" src="" alt="Capa da música">
+
+    <!-- Área onde aparece o nome da música atual -->
     <div class="info">
       <p id="nomeMusica">Música 1</p>
     </div>
 
-    <audio id="audio" src="musicas/musica1.mp3"></audio>
+    <!-- Elemento de áudio que o JavaScript controla -->
+    <audio id="audio" src="musicas/musica1.mpeg"></audio>
 
+    <!-- Barra de progresso da música -->
     <div class="progresso-container">
-
       <div class="progresso"></div>
-      
     </div>
 
+    <!-- Tempo atual e duração total da música -->
     <div class="tempo">
       <span id="tempoAtual">0:00</span>
       <span id="duracao">0:00</span>
     </div>
 
+    <!-- Botões principais do player -->
     <div class="botoes">
       <button id="voltar">⏮</button>
       <button id="play">▶</button>
       <button id="proxima">⏭</button>
     </div>
 
+    <!-- Controle de volume -->
     <label for="volume">Volume</label>
     <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+
+    <!-- Lista visual das músicas -->
+    <div class="playlist" id="playlist"></div>
+
   </main>
 
+  <!-- Conecta o arquivo JavaScript ao HTML -->
   <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,95 +1,262 @@
+/* ===================================================== */
+/* 1. RESET GERAL                                        */
+/* Remove margens padrão e melhora controle do layout    */
+/* ===================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
+/* ===================================================== */
+/* 2. BODY                                               */
+/* Centraliza o player na tela e define fundo geral      */
+/* ===================================================== */
+
 body {
   background: #101014;
   color: white;
   font-family: Arial, sans-serif;
+
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+/* ===================================================== */
+/* 3. CONTAINER PRINCIPAL DO PLAYER                      */
+/* Caixa principal do sistema                            */
+/* ===================================================== */
+
 .player {
   background: #1b1b24;
+
   width: 320px;
+
   padding: 25px;
+
   border-radius: 18px;
+
   text-align: center;
+
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
 }
+
+
+/* ===================================================== */
+/* 4. TÍTULO                                             */
+/* ===================================================== */
 
 h1 {
   margin-bottom: 20px;
 }
 
+
+/* ===================================================== */
+/* 5. ÁREA DE INFORMAÇÕES DA MÚSICA                      */
+/* ===================================================== */
+
 .info {
   background: #2a2a35;
+
   padding: 15px;
+
   border-radius: 12px;
+
   margin-bottom: 20px;
 }
+
+
+/* ===================================================== */
+/* 6. NOME DA MÚSICA                                     */
+/* ===================================================== */
 
 #nomeMusica {
   font-size: 18px;
   font-weight: bold;
 }
 
+
+/* ===================================================== */
+/* 7. BOTÕES DO PLAYER                                   */
+/* ===================================================== */
+
 .botoes {
   display: flex;
+
   justify-content: center;
+
   gap: 12px;
+
   margin-bottom: 20px;
 }
+
+
+/* ===================================================== */
+/* 8. ESTILO DOS BOTÕES                                  */
+/* ===================================================== */
 
 button {
   width: 55px;
   height: 45px;
+
   border: none;
+
   border-radius: 10px;
+
   cursor: pointer;
+
   font-size: 20px;
+
   background: #ff4b2b;
+
   color: white;
 }
+
+
+/* ===================================================== */
+/* 9. EFEITO HOVER DOS BOTÕES                            */
+/* ===================================================== */
 
 button:hover {
   background: #ff6a4d;
 }
+
+
+/* ===================================================== */
+/* 10. LABEL DO VOLUME                                   */
+/* ===================================================== */
 
 label {
   display: block;
   margin-bottom: 8px;
 }
 
+
+/* ===================================================== */
+/* 11. SLIDER DE VOLUME                                  */
+/* ===================================================== */
+
 #volume {
   width: 100%;
 }
 
+
+/* ===================================================== */
+/* 12. CONTAINER DA BARRA DE PROGRESSO                   */
+/* Barra completa                                        */
+/* ===================================================== */
+
 .progresso-container {
   width: 100%;
+
   height: 10px;
+
   background: #444;
+
   border-radius: 10px;
+
   margin-top: 20px;
-  overflow: hidden;
+
   margin-bottom: 20px;
+
+  overflow: hidden;
 }
+
+
+/* ===================================================== */
+/* 13. PROGRESSO DA MÚSICA                               */
+/* Parte vermelha que cresce conforme a música toca      */
+/* ===================================================== */
 
 .progresso {
   width: 0%;
+
   height: 100%;
+
   background: #ff4b2b;
 }
 
+
+/* ===================================================== */
+/* 14. TEMPO DA MÚSICA                                   */
+/* Tempo atual e duração total                           */
+/* ===================================================== */
+
 .tempo {
   display: flex;
+
   justify-content: space-between;
+
   margin-top: 8px;
+
   font-size: 14px;
+
   color: #ccc;
+}
+
+
+/* ===================================================== */
+/* 15. PLAYLIST                                          */
+/* Área onde as músicas aparecem                         */
+/* ===================================================== */
+
+.playlist {
+  margin-top: 20px;
+
+  text-align: left;
+}
+
+
+/* ===================================================== */
+/* 16. ITEM DA PLAYLIST                                  */
+/* Cada música individual                                */
+/* ===================================================== */
+
+.musica-item {
+  background: #2a2a35;
+
+  padding: 10px;
+
+  border-radius: 8px;
+
+  margin-bottom: 8px;
+
+  cursor: pointer;
+}
+
+
+/* ===================================================== */
+/* 17. HOVER DOS ITENS DA PLAYLIST                       */
+/* ===================================================== */
+
+.musica-item:hover {
+  background: #3a3a48;
+}
+
+
+/* ===================================================== */
+/* 18. MÚSICA ATIVA                                      */
+/* Música atual destacada                                */
+/* ===================================================== */
+
+.musica-ativa {
+  background: #ff4b2b;
+}
+
+#capa {
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin-bottom: 20px;
 }
