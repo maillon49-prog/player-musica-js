@@ -13,6 +13,8 @@ const botaoPlay = document.getElementById("play");
 const botaoProxima = document.getElementById("proxima");
 const botaoVoltar = document.getElementById("voltar");
 const volume = document.getElementById("volume");
+const botaoAleatorio = document.getElementById("aleatorio");
+const botaoRepetir = document.getElementById("repetir");
 
 const playlist = document.getElementById("playlist");
 
@@ -64,6 +66,8 @@ const musica = [
 
 let musicaAtual = 0;
 let tocando = false;
+let modoAleatorio = false;
+let modoRepetir = false;
 
 
 // =====================================================
@@ -122,7 +126,14 @@ function tocarOuPausar() {
 // =====================================================
 
 function proximaMusica() {
-    musicaAtual++;
+    if (modoAleatorio === true) {
+
+        musicaAtual = Math.floor(Math.random() * musica.length);
+
+    } else {
+        musicaAtual++;
+    }
+
 
     if (musicaAtual >= musica.length) {
         musicaAtual = 0;
@@ -156,6 +167,13 @@ function voltarMusica() {
     audio.play();
     botaoPlay.textContent = "⏸";
     tocando = true;
+}
+
+function alternarRepetir() {
+
+    modoRepetir = !modoRepetir;
+
+    botaoRepetir.classList.toggle("botao-ativo");
 }
 
 
@@ -196,6 +214,13 @@ function mostrarPlaylist() {
     });
 }
 
+function alternarAleatorio() {
+
+    modoAleatorio = !modoAleatorio;
+
+    botaoAleatorio.classList.toggle("botao-ativo");
+}
+
 
 // =====================================================
 // 10. EVENTOS DOS BOTÕES
@@ -205,7 +230,8 @@ function mostrarPlaylist() {
 botaoPlay.addEventListener("click", tocarOuPausar);
 botaoProxima.addEventListener("click", proximaMusica);
 botaoVoltar.addEventListener("click", voltarMusica);
-
+botaoAleatorio.addEventListener("click", alternarAleatorio);
+botaoRepetir.addEventListener("click", alternarRepetir);
 
 // =====================================================
 // 11. EVENTO DO VOLUME
@@ -223,7 +249,16 @@ volume.addEventListener("input", function () {
 // =====================================================
 
 audio.addEventListener("ended", function () {
+
+    if (modoRepetir === true) {
+
+        audio.currentTime = 0;
+
+        audio.play();
+
+    } else {
     proximaMusica();
+    }
 });
 
 
